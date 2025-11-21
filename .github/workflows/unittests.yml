@@ -43,4 +43,5 @@ jobs:
 
     - name: Execute notebooks
       run: |
-        jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 --ExecutePreprocessor.kernel_name=python3 notebooks\*.ipynb --inplace
+        python -m nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 --inplace notebooks\*.ipynb
+
