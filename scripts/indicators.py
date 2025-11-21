@@ -1,5 +1,6 @@
 import talib
 
+
 def calculate_indicators(df):
     """
     Calculate SMA, EMA, RSI, and MACD indicators.
