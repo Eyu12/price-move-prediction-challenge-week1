@@ -41,8 +41,10 @@ jobs:
         pytest tests --maxfail=1 --disable-warnings -q
       shell: cmd
 
-    - name: Build notebooks (optional)
+    - name: Register Python kernel
       run: |
-        pip install nbconvert
-        jupyter nbconvert --to notebook --execute notebooks\*.ipynb --inplace
-      shell: cmd
+        python -m ipykernel install --user --name python3 --display-name "Python 3"
+
+    - name: Execute notebooks
+      run: |
+        jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 --ExecutePreprocessor.kernel_name=python3 notebooks\*.ipynb --inplace
