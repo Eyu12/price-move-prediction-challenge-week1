@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def load_and_prepare(file_path):
     """
     Load CSV stock data and prepare it for analysis.
