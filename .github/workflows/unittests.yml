@@ -1,0 +1,48 @@
+name: Python CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main
+      - task-1
+      - task-2
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if exist requirements.txt pip install -r requirements.txt
+      shell: cmd
+
+    - name: Lint code
+      run: |
+        pip install flake8
+        flake8 src tests notebooks scripts
+      shell: cmd
+
+    - name: Run tests
+      run: |
+        pip install pytest
+        pytest tests --maxfail=1 --disable-warnings -q
+      shell: cmd
+
+    - name: Build notebooks (optional)
+      run: |
+        pip install nbconvert
+        jupyter nbconvert --to notebook --execute notebooks\*.ipynb --inplace
+      shell: cmd
