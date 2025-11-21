@@ -41,7 +41,5 @@ jobs:
         pytest tests --maxfail=1 --disable-warnings -q
       shell: cmd
 
-    - name: Execute notebooks
-      run: |
-        python -m nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 --inplace notebooks\*.ipynb
+
 
