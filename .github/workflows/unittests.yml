@@ -46,3 +46,4 @@ jobs:
         pip install nbconvert
         jupyter nbconvert --to notebook --execute notebooks\*.ipynb --inplace
       shell: cmd
+
