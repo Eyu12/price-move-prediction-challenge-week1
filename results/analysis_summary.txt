@@ -1,0 +1,29 @@
+NEWS SENTIMENT vs STOCK RETURNS ANALYSIS SUMMARY
+==================================================
+
+Analysis Date: 2025-11-24 22:26:26
+Stocks Analyzed: 4
+Total News Articles: 110,859
+
+CORRELATION RESULTS:
+------------------------------
+GOOG:
+  TextBlob Correlation: -0.8037 (p=0.1963)
+  VADER Correlation: -0.8701 (p=0.1299)
+  Days Analyzed: 4
+
+META:
+  TextBlob Correlation: -0.0003 (p=0.9890)
+  VADER Correlation: -0.0074 (p=0.7426)
+  Days Analyzed: 1984
+
+MSFT:
+  TextBlob Correlation: -0.0117 (p=0.5802)
+  VADER Correlation: 0.0288 (p=0.1743)
+  Days Analyzed: 2225
+
+NVDA:
+  TextBlob Correlation: 0.1757 (p=0.8243)
+  VADER Correlation: 0.5227 (p=0.4773)
+  Days Analyzed: 4
+
